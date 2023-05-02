@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication(scanBasePackages = "com.bean.samples.stock")
 @EnableDiscoveryClient
-@MapperScan({"io.seata.samples.integration.stock.mapper"})
+@MapperScan({"com.bean.samples.stock.mapper"})
 @EnableDubbo(scanBasePackages = "com.bean.samples.stock")
 public class SamplesStockApplication {
 
