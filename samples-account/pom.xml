@@ -26,17 +26,6 @@
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
         </dependency>
-        <!-- 使用配置中心的方式-->
-        <!--<dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba.nacos</groupId>
-                    <artifactId>nacos-client</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
         <!-- 使用服务发现的方式-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

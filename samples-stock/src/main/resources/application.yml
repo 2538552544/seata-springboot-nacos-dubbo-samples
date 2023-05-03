@@ -1,15 +1,22 @@
 server:
-  port: 8101
+  port: 8103
 #====================================stream =============================================
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/seata?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: root
-    password: 123456
+    password: web2017
   application:
     name: dubbo-stock-example
-
+  cloud:
+    #====================================nacos config===============================================
+    nacos:
+      discovery:
+        server-addr: 192.168.186.129:8848
+        namespace: 90fcdfe8-e451-463f-a6b7-34c666906129
+      username:
+      password:
 #====================================Dubbo config===============================================
 dubbo:
   application:
@@ -19,7 +26,7 @@ dubbo:
   protocol:
     id: dubbo
     name: dubbo
-    port: 20881
+    port: 20883
   registry:
     id: ${spring.application.name}-registry
     address: nacos://192.168.186.129:8848?username=nacos&password=ztxRbxaW3scY7t27&namespace=90fcdfe8-e451-463f-a6b7-34c666906129
@@ -39,7 +46,7 @@ mybatis-plus:
 #====================================Seata Config===============================================
 seata:
   enabled: true
-  application-id: ${spring.application.name}
+  application-id: stock-seata-example
   tx-service-group: my_test_tx_group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
   client:
     rm:
