@@ -16,7 +16,7 @@
 package com.bean.samples.order.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bean.samples.common.dto.AccountDTO;
 import com.bean.samples.common.dto.OrderDTO;
 import com.bean.samples.common.dubbo.AccountDubboService;
@@ -40,7 +40,7 @@ import java.util.UUID;
 @Service
 public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> implements ITOrderService {
 
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0.0", check = false)
     private AccountDubboService accountDubboService;
 
     /**

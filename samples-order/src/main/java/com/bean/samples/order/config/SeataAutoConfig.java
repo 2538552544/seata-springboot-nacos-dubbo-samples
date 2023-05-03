@@ -28,6 +28,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import javax.sql.DataSource;
+
 /**
  * @Author: heshouyou
  * @Description seata global configuration
@@ -72,39 +74,18 @@ public class SeataAutoConfig {
     }
 
     /**
-     * init datasource proxy
-     *
-     * @Param: druidDataSource  datasource bean instance
-     * @Return: DataSourceProxy  datasource proxy
-     */
-    @Bean
-    public DataSourceProxy dataSourceProxy(DruidDataSource druidDataSource) {
-        return new DataSourceProxy(druidDataSource);
-    }
-
-    /**
      * init mybatis sqlSessionFactory
      *
      * @Param: dataSourceProxy  datasource proxy
      * @Return: DataSourceProxy  datasource proxy
      */
     @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSourceProxy dataSourceProxy) throws Exception {
+    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-        factoryBean.setDataSource(dataSourceProxy);
-        factoryBean.setMapperLocations(
-            new PathMatchingResourcePatternResolver().getResources("classpath*:/mapper/*.xml"));
+        factoryBean.setDataSource(dataSource);
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:/mapper/*.xml"));
         factoryBean.setTransactionFactory(new JdbcTransactionFactory());
         return factoryBean.getObject();
     }
 
-    /**
-     * init global transaction scanner
-     *
-     * @Return: GlobalTransactionScanner
-     */
-    @Bean
-    public GlobalTransactionScanner globalTransactionScanner() {
-        return new GlobalTransactionScanner("order-gts-seata-example", "my_test_tx_group");
-    }
 }

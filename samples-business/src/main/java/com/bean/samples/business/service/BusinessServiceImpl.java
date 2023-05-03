@@ -36,10 +36,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class BusinessServiceImpl implements BusinessService {
 
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0.0", check = false)
     private StockDubboService stockDubboService;
 
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0.0", check = false)
     private OrderDubboService orderDubboService;
 
     private boolean flag;

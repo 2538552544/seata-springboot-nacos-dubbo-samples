@@ -15,7 +15,7 @@
  */
 package com.bean.samples.order.service;
 
-import com.baomidou.mybatisplus.service.IService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.bean.samples.common.dto.OrderDTO;
 import com.bean.samples.common.response.ObjectResponse;
 import com.bean.samples.order.entity.TOrder;

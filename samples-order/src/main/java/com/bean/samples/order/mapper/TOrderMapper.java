@@ -15,7 +15,7 @@
  */
 package com.bean.samples.order.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bean.samples.order.entity.TOrder;
 import org.apache.ibatis.annotations.Param;
 

@@ -15,7 +15,7 @@
  */
 package com.bean.samples.stock.service;
 
-import com.baomidou.mybatisplus.service.IService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.bean.samples.common.dto.CommodityDTO;
 import com.bean.samples.common.response.ObjectResponse;
 import com.bean.samples.stock.entity.TStock;

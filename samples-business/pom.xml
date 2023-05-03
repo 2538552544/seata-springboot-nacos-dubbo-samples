@@ -22,22 +22,10 @@
             <artifactId>samples-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-
         <dependency>
             <groupId>io.seata</groupId>
-            <artifactId>seata-all</artifactId>
-        </dependency>
-
-        <!-- 使用配置中心的方式-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba.nacos</groupId>
-                    <artifactId>nacos-client</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>${seata.version}</version>
         </dependency>
         <!-- 使用服务发现的方式-->
         <dependency>
@@ -74,7 +62,7 @@
 
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus</artifactId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
         <dependency>

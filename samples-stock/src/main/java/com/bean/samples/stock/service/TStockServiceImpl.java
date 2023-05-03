@@ -15,7 +15,7 @@
  */
 package com.bean.samples.stock.service;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bean.samples.common.dto.CommodityDTO;
 import com.bean.samples.common.enums.RspStatusEnum;
 import com.bean.samples.common.response.ObjectResponse;

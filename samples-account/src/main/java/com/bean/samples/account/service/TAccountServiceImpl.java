@@ -15,7 +15,7 @@
  */
 package com.bean.samples.account.service;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bean.samples.account.entity.TAccount;
 import com.bean.samples.account.mapper.TAccountMapper;
 import com.bean.samples.common.dto.AccountDTO;
